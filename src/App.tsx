@@ -1,35 +1,35 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import Footer from "./components/layout/Footer";
+import Navbar from "./components/layout/Navbar";
+import TaskList from "./components/dashboard/tasks/TaskList";
+import "./styles.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const sampleTasks = [
+    {
+      id: 1,
+      name: "Complete Dashboard UI",
+      preview: "Need to finish the task manager component and styling",
+      body: "Full description here...",
+      date: "2024-02-02",
+      deadline: "10-02-24",
+    },
+    {
+      id: 2,
+      name: "Add create/edit functionality to tasks",
+      preview: "Add functionality to the + icon",
+      body: "Full description here...",
+      date: "2024-02-02",
+      deadline: "10-02-24",
+    },
+  ];
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="flex min-h-screen items-center justify-center bg-gray-100 dark:bg-gray-900">
+      <Navbar />
+      <TaskList tasks={sampleTasks} />
+      <Footer />
+    </div>
+  );
 }
 
-export default App
+export default App;
