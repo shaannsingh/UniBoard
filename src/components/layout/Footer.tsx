@@ -6,7 +6,7 @@ const Footer = () => {
           <div className="text-sm text-gray-600 dark:text-gray-300">
             © 2025 UniBoard. All rights reserved.
           </div>
-          <div className="flex space-x-6">
+          <div className="flex space-x-6 pr-1">
             <a
               href="#"
               className="text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white"

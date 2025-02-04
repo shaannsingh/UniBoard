@@ -7,7 +7,7 @@ interface TaskListProps {
 
 const TaskList = ({ tasks }: TaskListProps) => {
   return (
-    <div className="fixed left-8 top-16 w-72 h-180 bg-gray-100 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-800 rounded-2xl shadow-xl">
+    <div className="fixed left-8 top-16 w-72 h-[calc(100vh-8.75rem)] bg-gray-100 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-800 rounded-2xl shadow-xl">
       <div className="flex items-center justify-between">
         <h2 className="px-4 text-lg font-semibold text-gray-600 dark:text-gray-200">
           Tasks

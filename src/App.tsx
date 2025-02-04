@@ -3,7 +3,7 @@ import Navbar from "./components/layout/Navbar";
 import TaskList from "./components/dashboard/tasks/TaskList";
 import "./styles.css";
 
-function App() {
+const App = () => {
   const sampleTasks = [
     {
       id: 1,
@@ -30,6 +30,6 @@ function App() {
       <Footer />
     </div>
   );
-}
+};
 
 export default App;
