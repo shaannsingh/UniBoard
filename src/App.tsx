@@ -6,20 +6,18 @@ import "./styles.css";
 const App = () => {
   const sampleTasks = [
     {
-      id: 1,
+      _id: "1",
       name: "Complete Dashboard UI",
       preview: "Need to finish the task manager component and styling",
-      body: "Full description here...",
-      date: "2024-02-02",
-      deadline: "10-02-24",
+      body: "I need to add a calendar, a notes section, a files section, and I don't know.. some more stuff for fun.",
+      deadline: new Date("10-02-24"),
     },
     {
-      id: 2,
+      _id: "2",
       name: "Add create/edit functionality to tasks",
       preview: "Add functionality to the + icon",
-      body: "Full description here...",
-      date: "2024-02-02",
-      deadline: "10-02-24",
+      body: "Almost done",
+      deadline: new Date("10-02-24"),
     },
   ];
 

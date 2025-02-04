@@ -31,10 +31,11 @@ const TaskList = ({ tasks }: TaskListProps) => {
         {tasks && tasks.length > 0 ? (
           tasks.map((task) => (
             <TaskCard
-              key={task.id}
+              key={task._id}
               name={task.name}
               preview={task.preview}
-              deadline={task.deadline}
+              body={task.body}
+              deadline={task.deadline.toDateString()}
             />
           ))
         ) : (
