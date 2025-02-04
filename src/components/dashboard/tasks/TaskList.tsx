@@ -31,7 +31,7 @@ const TaskList = ({ tasks }: TaskListProps) => {
         {tasks && tasks.length > 0 ? (
           tasks.map((task) => (
             <TaskCard
-              key={task._id}
+              key={task.id}
               name={task.name}
               preview={task.preview}
               body={task.body}

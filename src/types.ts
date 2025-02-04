@@ -1,5 +1,5 @@
 export interface Task {
-  _id: string | number;
+  id: number;
   name: string;
   preview: string;
   body: string;

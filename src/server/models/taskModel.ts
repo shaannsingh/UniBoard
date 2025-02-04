@@ -1,7 +1,7 @@
 import mongoose, { Schema, Document } from "mongoose";
 import { Task } from "../../types";
 
-interface TaskDocument extends Document, Task {
+interface TaskDocument extends Document, Omit<Task, "id"> {
   createdAt: Date;
   updatedAt: Date;
 }
