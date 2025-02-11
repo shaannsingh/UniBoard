@@ -1,7 +1,7 @@
 import mongoose, { Schema, Document } from "mongoose";
 import { Task } from "../../types";
 
-interface TaskDocument extends Document, Omit<Task, "id"> {
+export interface TaskDocument extends Document, Omit<Task, "id"> {
   createdAt: Date;
   updatedAt: Date;
 }
@@ -30,5 +30,4 @@ const taskSchema = new Schema(
   }
 );
 
-const TaskModel = mongoose.model<TaskDocument>("Task", taskSchema);
-export default TaskModel;
+export const TaskModel = mongoose.model<TaskDocument>("Task", taskSchema);
