@@ -1,11 +1,21 @@
+import { useState } from "react";
 import { Task } from "../../../types";
 import TaskCard from "./TaskCard";
+import TaskFormCard from "./feature-components/TaskFormCard";
 
 interface TaskListProps {
   tasks?: Task[];
+  onAddTask?: (task: Omit<Task, "id">) => void;
 }
 
-const TaskList = ({ tasks }: TaskListProps) => {
+const TaskList = ({ tasks, onAddTask }: TaskListProps) => {
+  const [showForm, setShowForm] = useState(false);
+
+  const handleSubmit = (formData: Omit<Task, "id">) => {
+    onAddTask?.(formData);
+    setShowForm(false);
+  };
+
   return (
     <div className="fixed left-8 top-16 w-lg h-[calc(100vh-8.75rem)] bg-gray-100 dark:bg-gray-800 border-2 border-gray-200 dark:border-gray-800 rounded-2xl shadow-xl">
       <div className="flex items-center justify-between">
@@ -19,6 +29,7 @@ const TaskList = ({ tasks }: TaskListProps) => {
           viewBox="0 0 24 24"
           strokeWidth="1.5"
           stroke="currentColor"
+          onClick={() => setShowForm(true)}
         >
           <path
             strokeLinecap="round"
@@ -28,6 +39,12 @@ const TaskList = ({ tasks }: TaskListProps) => {
         </svg>
       </div>
       <div className="overflow-y-auto h-full">
+        {showForm && (
+          <TaskFormCard
+            onSubmit={handleSubmit}
+            onCancel={() => setShowForm(false)}
+          />
+        )}
         {tasks && tasks.length > 0 ? (
           tasks.map((task) => (
             <TaskCard
